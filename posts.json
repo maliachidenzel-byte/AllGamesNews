@@ -1,5 +1,31 @@
 [
   {
+    "title": "Fortnite Update",
+    "description": "New season, weapons and map changes",
+    "link": "posts/fortnite.html"
+  },
+  {
+    "title": "COD Mobile Update",
+    "description": "Ranked improvements and new maps",
+    "link": "posts/cod.html"
+  },
+  {
+    "title": "PUBG New Patch",
+    "description": "Weapon balance and performance fixes",
+    "link": "posts/pubg.html"
+  },
+  {
+    "title": "Minecraft Update",
+    "description": "New mobs and survival improvements",
+    "link": "posts/minecraft.html"
+  },
+  {
+    "title": "GTA Online News",
+    "description": "New missions and events added",
+    "link": "posts/gta.html"
+  }
+][
+  {
     "title": "COD Mobile Update",
     "description": "New maps and ranked improvements",
     "link": "posts/cod.html"
