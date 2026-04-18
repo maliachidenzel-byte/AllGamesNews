@@ -1,10 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game News</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <h2>🎮 Game News</h2>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#">Mobile</a>
+    <a href="#">PC</a>
+    <a href="#">Console</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <h1>Latest Gaming News</h1>
+
+  <!-- NEWS GRID (auto-loaded from JSON) -->
+  <div class="news-grid" id="news"></div>
+
+</div>
+
+<!-- DYNAMIC LOADER -->
 <script>
 fetch('./posts.json')
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById('news');
 
-    // ✅ IMPORTANT: clear old content first
+    // clear old content
     container.innerHTML = "";
 
     data.forEach(post => {
@@ -18,118 +53,8 @@ fetch('./posts.json')
       `;
     });
   })
-  .catch(err => console.log(err));
-</script><div class="container">
-  <h1> Game News</h1>
-
-  <div class="news-grid" id="news"></div>
-</div>
-
-<script>
-fetch('posts.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById('news');
-
-    data.forEach(post => {
-      container.innerHTML += `
-        <a href="${post.link}" class="card-link">
-          <div class="card">
-            <h3>${post.title}</h3>
-            <p>${post.description}</p>
-          </div>
-        </a>
-      `;
-    });
-  });
-</script><div class="container">
-
-  <h1> Game News</h1>
-
-  <div class="news-grid">
-
-    <a href="posts/mobile/fortnite.html" class="card-link">
-      <div class="card">
-        <h3>Fortnite Update</h3>
-        <p>New season, weapons and map changes</p>
-      </div>
-    </a>
-
-    <a href="posts/mobile/cod.html" class="card-link">
-      <div class="card">
-        <h3>COD Mobile Update</h3>
-        <p>New maps and ranked improvements</p>
-      </div>
-    </a>
-
-  </div>
-
-</div><nav class="navbar">
-  
-
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="#">Mobile</a>
-    <a href="#">PC</a>
-    <a href="#">Console</a>
-  </div>
-</nav><div class="container">
-  
-
-  <div class="news-grid">
-
-   
-
-    
-
-  </div>
-</div><div class="container">
-  
-
-  <div class="news-grid">
-
-    
-
-    <a href="post.html" style="text-decoration:none; color:white;">
-      <div class="card">COD Mobile Update</div>
-    </a>
-
-  </div>
-</div><!DOCTYPE html>
-<html>
-<head><!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game News</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="container">
-  <h1> Game News</h1>
-
-  <div class="news-grid">
-    <div class="card">Fortnite update news</div>
-    <div class="card">COD Mobile update</div>
-    <div class="card">New game releases</div>
-  </div>
-</div>
-
-</body>
-</html>
-  
-</head>
-<body style="background:#111;color:white;font-family:sans-serif;">
-  
-
-  <h2>Latest News</h2>
-
-  <p><b>Fortnite Update</b><br>
-  New season just dropped with crazy skins!</p>
-
-  <p><b>Call of Duty Mobile</b><br>
-  New map and weapons released.</p>
+  .catch(err => console.log("Error loading posts:", err));
+</script>
 
 </body>
 </html>
