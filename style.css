@@ -1,4 +1,18 @@
-.card-link {
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+
+  padding: 10px;
+}body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f0f0f;
+  color: white;
+
+  /* smoother scrolling feel */
+  scroll-behavior: smooth;
+}.card-link {
   text-decoration: none;
   color: white;
 }
@@ -76,4 +90,22 @@
   .news-grid {
     flex-direction: column;
   }
+}
+.card {
+  background: #1f1f1f;
+  padding: 18px;
+  border-radius: 14px;
+
+  /* FLOAT EFFECT */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+
+/* FLOAT ON HOVER */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
