@@ -1,4 +1,25 @@
-<div class="container">
+<script>
+fetch('./posts.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('news');
+
+    // ✅ IMPORTANT: clear old content first
+    container.innerHTML = "";
+
+    data.forEach(post => {
+      container.innerHTML += `
+        <a href="${post.link}" class="card-link">
+          <div class="card">
+            <h3>${post.title}</h3>
+            <p>${post.description}</p>
+          </div>
+        </a>
+      `;
+    });
+  })
+  .catch(err => console.log(err));
+</script><div class="container">
   <h1>🎮 Game News</h1>
 
   <div class="news-grid" id="news"></div>
