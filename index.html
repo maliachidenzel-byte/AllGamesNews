@@ -70,3 +70,26 @@ fetch('./posts.json')
 
 </body>
 </html>
+<script>
+fetch('./posts.json')
+  .then(res => {
+    if (!res.ok) throw new Error("File not found");
+    return res.json();
+  })
+  .then(data => {
+    const container = document.getElementById('news');
+    container.innerHTML = "";
+
+    data.forEach(post => {
+      container.innerHTML += `
+        <a href="${post.link}" class="card-link">
+          <div class="card">
+            <h3>${post.title}</h3>
+            <p>${post.description}</p>
+          </div>
+        </a>
+      `;
+    });
+  })
+  .catch(err => console.log("ERROR:", err));
+</script>
